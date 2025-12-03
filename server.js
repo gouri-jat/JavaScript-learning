@@ -1,21 +1,29 @@
 //creating server by myself
 const express = require("express");
 const app = express();
+app.use(express.json());
 
-let users = [
-    {id:1,name: "mannat"},
-    {id:2, name : "xyz" }
-];
-
-app.get("/",(req,res) =>{
+app.get("/",(req,res) => {
     res.send("Now creating server");
 });
- app.get("/users",(req,res) =>{
-    res.send("user CRUD creation");
- });
+ 
 
 //lest try CRUD in express manually
+app.get("/users",(req,res) => {
+    res.send("start creating backend");
+ });
 
+app.post("/posting",(req,res) => {
+  res.send("posting backend");
+});
+
+app.put("/update",(req,res) => {
+    res.send("updating backend");
+});
+
+app.delete("/delete",(req,res) => {
+    res.send("deleting backend");
+});
 
 
 app.listen(3000,() =>{
